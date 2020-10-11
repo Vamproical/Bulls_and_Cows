@@ -7,22 +7,14 @@ public class GenerateCode {
                     lengthCode + " because there aren't enough unique digits.");
             return null;
         }
-        StringBuilder result = new StringBuilder();
-        while (result.length() != lengthCode) {
-            long pseudoRandomNumber = System.nanoTime();
-            String tempNumber = String.valueOf(Long.parseLong(new StringBuilder(String.valueOf(pseudoRandomNumber))
-                    .reverse()
-                    .toString()));
-            for (int i = 0; i < tempNumber.length(); i++) {
+        StringBuilder secret = new StringBuilder(String.valueOf((int) (Math.random() * 10)));
 
-                if (!result.toString().contains(String.valueOf(tempNumber.charAt(i)))) {
-                    result.append(tempNumber.charAt(i));
-                }
-                if (result.length() == lengthCode) {
-                    break;
-                }
+        while (secret.length() != lengthCode) {
+            int random = (int) (Math.random() * 10);
+            if (!secret.toString().contains(String.valueOf(random))) {
+                secret.append(random);
             }
         }
-        return result.toString();
+        return secret.toString();
     }
 }
