@@ -8,7 +8,7 @@ public class GenerateCode {
             return null;
         }
         StringBuilder result = new StringBuilder();
-        while(result.length() != lengthCode) {
+        while (result.length() != lengthCode) {
             long pseudoRandomNumber = System.nanoTime();
             String tempNumber = String.valueOf(Long.parseLong(new StringBuilder(String.valueOf(pseudoRandomNumber))
                     .reverse()

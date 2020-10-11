@@ -5,12 +5,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        //String[] secretCodeArr = secretCode.split("");
-        //String[] guessCode = scanner.nextLine().split("");
+        System.out.println("Please, enter the secret code's length:");
         int lengthCode = scanner.nextInt();
+        System.out.println("Okay, let's start a game!");
         String code = GenerateCode.generateSecreteCode(lengthCode);
-        if (code != null) {
-            System.out.print("The random secret number is " + code + ".");
-        }
+        Game game = new Game();
+        game.game(code);
     }
 }
