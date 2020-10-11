@@ -8,9 +8,8 @@ public class GenerateCode {
             'u', 'v', 'w', 'x', 'y', 'z'};
     public static String generateSecreteCode(int lengthCode, int possibleSymbols) {
         Random random = new Random();
-        if (lengthCode > 36) {
-            System.out.println("Error: can't generate a secret number with a length of " +
-                    lengthCode + " because there aren't enough unique digits.");
+        if (lengthCode > 36 || possibleSymbols > 36) {
+            System.out.println("Error: maximum number of possible symbols in the code is 36 (0-9, a-z).");
             return null;
         }
         StringBuilder secret = new StringBuilder();
